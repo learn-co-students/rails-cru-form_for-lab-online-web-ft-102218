@@ -1,0 +1,23 @@
+<h1>Artists</h1>
+<% @artists.each do |artist| %>
+    <p>Name: <%= artist.name %></p>
+    <p>Bio: <%= artist.bio %></p>
+    <p>Song(s):   <% artist.songs.each do |song| 
+                    if song != artist.songs.last %>
+                        <%= "#{song.name}, " %>
+                    <% else %>
+                        <%= song.name %>
+                    <% end %>
+                <% end %>
+    </p>
+    <p>Genre(s):   <% artist.genres.each do |genre| 
+                    if genre != artist.genres.last %>
+                        <%= "#{genre.name}, " %>
+                    <% else %>
+                        <%= genre.name %>
+                    <% end %>
+                <% end %>
+    </p>
+    <hr>
+<% end %>
+                
