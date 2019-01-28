@@ -1,0 +1,21 @@
+<h1>Genres</h1>
+<% @genres.each do |genre| %>
+    <p>Name: <%= genre.name %></p>
+    <p>Song(s):   <% genre.songs.each do |song| 
+                    if song != genre.songs.last %>
+                        <%= "#{song.name}, " %>
+                    <% else %>
+                        <%= song.name %>
+                    <% end %>
+                <% end %>
+    </p>
+    <p>Artist(s):   <% genre.artists.each do |artist| 
+                    if artist != genre.artists.last %>
+                        <%= "#{artist.name}, " %>
+                    <% else %>
+                        <%= artist.name %>
+                    <% end %>
+                <% end %>
+    </p>
+    <hr>
+<% end %>
